@@ -11,20 +11,6 @@
   font-weight: 600;
 }
 
-.product-title {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 22px;
-  margin-top: 15px;
-  min-height: 40px;
-  font-weight: 500;
-}
-
-.product-price {
-  font-size: 16px;
-  font-weight: 500;
-  opacity: 80%;
-}
-
 #product-container {
   display: flex;
   flex-wrap: wrap;
@@ -51,8 +37,20 @@
   box-shadow: rgba(99, 99, 99, 0.3) 0px 4px 16px 0px;
 }
 
+.product-title {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 22px;
+  min-height: 40px;
+  font-weight: 500;
+}
+
+.product-price {
+  font-size: 16px;
+  font-weight: 500;
+  opacity: 80%;
+}
+
 .product-image-div {
-  margin: 4px 0 4px 0;
   padding: 30px;
   min-height: 272px;
   justify-content: center;
@@ -80,7 +78,6 @@
   border-radius: 10px;
   height: 40px;
   width: 100px;
-  margin-bottom: 20px;
   font-size: 12px;
   text-align: center;
 }
