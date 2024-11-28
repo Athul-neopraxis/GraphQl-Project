@@ -1,0 +1,133 @@
+.cm-page-wrapper {
+  align-items: center;
+  display: flex;
+}
+
+.suggested-products-heading {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 35px;
+}
+
+.product-title {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 22px;
+  margin-top: 15px;
+  min-height: 40px;
+  font-weight: 500;
+}
+
+.product-price {
+  font-size: 16px;
+  font-weight: 500;
+  opacity: 80%;
+}
+
+#product-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.product-container {
+  background-color: #f9f9f9;
+  margin: 12px;
+  margin-bottom: 15px;
+  padding: 20px;
+  height: auto;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+  border: 1px solid #ddd;
+  flex: 1 0 30%;
+  margin: 14px; 
+}
+
+.product-container:hover {
+  background-color: #ffffff;
+  transform: scale(1.05);
+  box-shadow: rgba(99, 99, 99, 0.3) 0px 4px 16px 0px;
+}
+
+.product-image-div {
+  margin: 4px 0 4px 0;
+  padding: 30px;
+  min-height: 272px;
+  justify-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-image-div img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.add-to-cart-button {
+  margin-left: auto;
+  margin-right: auto;
+  background: linear-gradient(
+    90deg,
+    rgba(58, 73, 180, 1) 0%,
+    rgba(119, 29, 253, 1) 50%,
+    rgba(213, 69, 252, 1) 100%
+  );
+  color: #fff;
+  border-radius: 10px;
+  height: 40px;
+  width: 100px;
+  margin-bottom: 20px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.add-to-cart-button:hover {
+  background: rgb(194, 17, 242);
+  background: linear-gradient(
+    90deg,
+    rgba(194, 17, 242, 1) 0%,
+    rgba(119, 29, 253, 1) 50%,
+    rgba(17, 37, 242, 1) 100%
+  );
+  transform: translateY(-4px);
+}
+
+button {
+  padding: 10px;
+}
+
+button:hover {
+  background-color: unset;
+}
+
+button:focus {
+  background-color: unset;
+  outline: unset !important;
+}
+
+@media only screen and (max-width: 768px) {
+  .add-to-cart-button {
+    height: 40px;
+    width: 82px;
+    font-size: 12px;
+  }
+
+  .product-title {
+    font-size: 24px;
+    font-weight: 500;
+    word-break: break-all;
+    min-height: 50px;
+  }
+
+  .product-image-div {
+    margin: 30px 0 30px 0;
+    padding: 10px;
+  }
+
+  .product-container {
+    margin-right: 10px;
+  }
+}
