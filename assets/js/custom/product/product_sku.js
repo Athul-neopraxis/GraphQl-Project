@@ -77,7 +77,6 @@ export default class ProductData extends PageManager {
   }
 
   fetchProductDetails(sku) {
-
     fetch("/graphql", {
       method: "POST",
       credentials: "same-origin",
@@ -90,6 +89,7 @@ export default class ProductData extends PageManager {
           query {
             site {
               product(sku: "${sku}") {
+                entityId
                 name
                 prices {
                   price {
@@ -112,35 +112,35 @@ export default class ProductData extends PageManager {
       .then((response) => response.json())
       .then((data) => {
         console.log("data", data);
-
+  
         const product = data.data.site.product;
-
+  
         if (product) {
-          const { name, prices, images } = product;
-
+          const { entityId, name, prices, images } = product;
+  
           const price =
             prices && prices.price.formatted ? prices.price.formatted : "N/A";
           const imageUrl =
             images && images.edges.length > 0
               ? images.edges[0].node.urlOriginal
               : "default-image.jpg";
-
+  
           const productContainer = document.getElementById("product-container");
-
+  
           const productElement = document.createElement("div");
           productElement.classList.add("product-container");
-
+  
           productElement.innerHTML = `
-      <div class="product-title">${name}</div>
-      <div class="product-price">${price}</div>
-      <div class="product-image-div">
-        <img src="${imageUrl}" alt="${name}" />
-      </div>
-      <div class="add-to-cart-button">
-        <button>Add to Cart</button>
-      </div>
-    `;
-
+            <div class="product-title">${name}</div>
+            <div class="product-price">${price}</div>
+            <div class="product-image-div">
+              <img src="${imageUrl}" alt="${name}" />
+            </div>
+            <div class="add-to-cart-button">
+              <button onclick="window.location.href='/cart.php?action=add&product_id=${entityId}';">Add to Cart</button>
+            </div>
+          `;
+  
           productContainer.appendChild(productElement);
         } else {
           console.log(`No product found for SKU: ${sku}`);
@@ -150,4 +150,5 @@ export default class ProductData extends PageManager {
         console.error("Error during GraphQL fetch for SKU:", sku, error);
       });
   }
+  
 }
