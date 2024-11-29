@@ -58,7 +58,7 @@ export default class ProductData extends PageManager {
         );
 
         if (skuField) {
-          console.log("SKU Field Found:", skuField.value);
+          console.log("SKU Field:", skuField.value);
 
           const skuArray = skuField.value.split(",").map((sku) => sku.trim());
 
@@ -136,8 +136,13 @@ export default class ProductData extends PageManager {
             <div class="product-image-div">
               <img src="${imageUrl}" alt="${name}" />
             </div>
-            <div class="add-to-cart-button">
-              <button onclick="window.location.href='/cart.php?action=add&product_id=${entityId}';">Add to Cart</button>
+            <div class="product-buttons">
+              <div class="add-to-cart-button">
+                <button onclick="window.location.href='/cart.php?action=add&product_id=${entityId}';">Add to Cart</button>
+              </div>
+              <div class="view-more-button">
+                <button>View More</button>
+              </div>
             </div>
           `;
   

@@ -63,14 +63,37 @@
   height: auto;
 }
 
+.product-buttons{
+  display: flex;
+}
+
 .add-to-cart-button {
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 20px;
   background: linear-gradient(
     90deg,
     rgba(58, 73, 180, 1) 0%,
     rgba(119, 29, 253, 1) 50%,
     rgba(213, 69, 252, 1) 100%
+  );
+  color: #fff;
+  border-radius: 10px;
+  height: 40px;
+  width: 100px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.view-more-button{
+  margin-left: auto;
+  margin-right: auto;
+  background: rgb(194, 17, 242);
+  background: linear-gradient(
+    90deg,
+    rgba(194, 17, 242, 1) 0%,
+    rgba(119, 29, 253, 1) 50%,
+    rgba(17, 37, 242, 1) 100%
   );
   color: #fff;
   border-radius: 10px;
@@ -87,6 +110,16 @@
     rgba(194, 17, 242, 1) 0%,
     rgba(119, 29, 253, 1) 50%,
     rgba(17, 37, 242, 1) 100%
+  );
+  transform: translateY(-4px);
+}
+
+.view-more-button:hover{
+  background: linear-gradient(
+    90deg,
+    rgba(58, 73, 180, 1) 0%,
+    rgba(119, 29, 253, 1) 50%,
+    rgba(213, 69, 252, 1) 100%
   );
   transform: translateY(-4px);
 }
