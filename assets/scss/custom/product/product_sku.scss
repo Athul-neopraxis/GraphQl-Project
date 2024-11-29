@@ -72,13 +72,13 @@
 
 .small-images {
   margin-bottom: 20px;
+  border: solid 1px #000;
 }
 
 .small-images:hover {
   transition: 0.6s ease;
   transform: scale(1.2);
-  box-shadow: rgba(99, 99, 99, 0.3) 0px 4px 16px 0px;
-  border-radius: 5px;
+  border:solid 1px #e4e4e4;
 }
 
 .product-buttons {
