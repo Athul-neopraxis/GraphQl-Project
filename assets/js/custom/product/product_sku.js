@@ -97,7 +97,7 @@ export default class ProductData extends PageManager {
                     formatted
                   }
                 }
-                images(first: 1) {
+                images(first: 4) {
                   edges {
                     node {
                       urlOriginal
@@ -119,9 +119,12 @@ export default class ProductData extends PageManager {
         if (product) {
           const { entityId, name, prices, images, description } = product;
 
-          const price = prices && prices.price.formatted ? prices.price.formatted : "N/A";
+          const price =
+            prices && prices.price.formatted ? prices.price.formatted : "N/A";
           const imageUrl =
-            images && images.edges.length > 0 ? images.edges[0].node.urlOriginal : "default-image.jpg";
+            images && images.edges.length > 0
+              ? images.edges[0].node.urlOriginal
+              : "default-image.jpg";
 
           const productContainer = document.getElementById("product-container");
 
@@ -134,6 +137,9 @@ export default class ProductData extends PageManager {
             <div class="product-image-div">
               <img src="${imageUrl}" alt="${name}" />
             </div>
+            <div class="small-image-container">
+              <!-- Small images will be injected here dynamically -->
+            </div>
             <div class="product-buttons">
               <div class="add-to-cart-button">
                 <button onclick="window.location.href='/cart.php?action=add&product_id=${entityId}';">Add to Cart</button>
@@ -145,6 +151,20 @@ export default class ProductData extends PageManager {
           `;
 
           productContainer.appendChild(productElement);
+
+          const smallImageContainer = productElement.querySelector(
+            ".small-image-container"
+          );
+
+          if (images && images.edges.length > 0) {
+            images.edges.forEach((imageEdge) => {
+              const smallImageUrl = imageEdge.node.urlOriginal;
+              const smallImageDiv = document.createElement("div");
+              smallImageDiv.classList.add("small-images");
+              smallImageDiv.innerHTML = `<img src="${smallImageUrl}" style="width:100%; max-width: 80px; height:40px" />`;
+              smallImageContainer.appendChild(smallImageDiv);
+            });
+          }
 
           const viewMoreButton = productElement.querySelector(".view-more-btn");
           viewMoreButton.addEventListener("click", () => {
@@ -174,13 +194,11 @@ export default class ProductData extends PageManager {
 
     modal.style.display = "block";
 
-    // Add event listener for the close button
     const closeModalButton = modalDetails.querySelector(".close");
     closeModalButton.addEventListener("click", () => {
       modal.style.display = "none";
     });
 
-    // Close the modal when clicked outside of the modal content
     window.addEventListener("click", (event) => {
       if (event.target === modal) {
         modal.style.display = "none";
