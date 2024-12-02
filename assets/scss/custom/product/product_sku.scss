@@ -170,7 +170,12 @@
 
 .modal-container::before {
   content: "";
-  background-image: conic-gradient(#ff0052 20deg, transparent 120deg);
+  background-image: conic-gradient(
+    rgba(213, 69, 252, 1),
+    rgba(58, 73, 180, 1),
+    transparent 200deg
+  );
+
   width: 150%;
   height: 150%;
   position: absolute;
