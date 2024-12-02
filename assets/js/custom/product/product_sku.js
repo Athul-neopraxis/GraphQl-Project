@@ -138,7 +138,6 @@ export default class ProductData extends PageManager {
               <img src="${imageUrl}" alt="${name}" id="main-image" />
             </div>
             <div class="small-image-container">
-              <!-- Small images will be injected here dynamically -->
             </div>
             <div class="product-buttons">
               <div class="add-to-cart-button">
@@ -199,7 +198,6 @@ export default class ProductData extends PageManager {
       <img src="${imageUrl}" alt="${name}" style="width:100%; max-width: 250px;" />
       <button class="close">&times;</button> <!-- Close button -->
     `;
-
     modal.style.display = "block";
 
     const closeModalButton = modalDetails.querySelector(".close");

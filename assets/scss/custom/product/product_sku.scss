@@ -190,15 +190,6 @@
   animation: rotate 3s linear infinite;
 }
 
-.modal-container::after {
-  position: absolute;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-}
-
 #modal-product-details {
   background-color: white;
   padding: 20px;
