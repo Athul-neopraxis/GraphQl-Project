@@ -61,6 +61,11 @@
   height: auto;
 }
 
+.product-image-div:hover{
+  transition: 0.6s ease;
+  transform: scale(1.1);
+}
+
 .small-image-container {
   display: flex;
   justify-content: center;
@@ -70,7 +75,7 @@
 
 .small-images {
   margin-bottom: 20px;
-  border: solid 1px #000;
+  border: solid 0.5px #dadada;
   width: fit-content;
 }
 
@@ -95,7 +100,7 @@
     rgba(213, 69, 252, 1) 100%
   );
   color: #fff;
-  border-radius: 10px;
+  border-radius: 5px;
   height: 40px;
   width: 100px;
   font-size: 12px;
@@ -113,7 +118,7 @@
     rgba(17, 37, 242, 1) 100%
   );
   color: #fff;
-  border-radius: 10px;
+  border-radius: 5px;
   height: 40px;
   width: 100px;
   font-size: 12px;
