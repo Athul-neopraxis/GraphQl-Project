@@ -1,7 +1,3 @@
-.cm-page-wrapper {
-  align-items: center;
-}
-
 .suggested-products-heading {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
@@ -174,26 +170,28 @@
 .modal-container::before {
   content: "";
   background-image: conic-gradient(
-    rgba(213, 69, 252, 1),
-    rgba(58, 73, 180, 1),
-    transparent 200deg
+    #ff00bb 0deg,
+    #ff00bb 90deg,
+    transparent 130deg,
+    transparent 180deg,
+    #4530ff 180deg,
+    #4530ff 270deg,
+    transparent 310deg,
+    transparent 360deg
   );
   width: 150%;
   height: 150%;
   position: absolute;
-  animation: rotate 5s linear infinite;
+  animation: rotate 3s linear infinite;
 }
 
 .modal-container::after {
-  width: 190px;
-  height: 190px;
   position: absolute;
   border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
-  box-shadow: inset 20px 20px 20px #0000008c;
 }
 
 #modal-product-details {
