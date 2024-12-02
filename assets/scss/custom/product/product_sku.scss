@@ -41,12 +41,14 @@
   font-size: 22px;
   min-height: 40px;
   font-weight: 500;
+  text-align: center;
 }
 
 .product-price {
   font-size: 16px;
   font-weight: 500;
   opacity: 80%;
+  text-align: center;
 }
 
 .product-image-div {
@@ -73,6 +75,7 @@
 .small-images {
   margin-bottom: 20px;
   border: solid 1px #000;
+  width: fit-content;
 }
 
 .small-images:hover {
@@ -175,11 +178,10 @@
     rgba(58, 73, 180, 1),
     transparent 200deg
   );
-
   width: 150%;
   height: 150%;
   position: absolute;
-  animation: rotate 2s linear infinite;
+  animation: rotate 5s linear infinite;
 }
 
 .modal-container::after {

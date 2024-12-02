@@ -135,7 +135,7 @@ export default class ProductData extends PageManager {
             <div class="product-title">${name}</div>
             <div class="product-price">${price}</div>
             <div class="product-image-div">
-              <img src="${imageUrl}" alt="${name}" />
+              <img src="${imageUrl}" alt="${name}" id="main-image" />
             </div>
             <div class="small-image-container">
               <!-- Small images will be injected here dynamically -->
@@ -163,6 +163,14 @@ export default class ProductData extends PageManager {
               smallImageDiv.classList.add("small-images");
               smallImageDiv.innerHTML = `<img src="${smallImageUrl}" style="width:100%; max-width: 80px; height:40px" />`;
               smallImageContainer.appendChild(smallImageDiv);
+
+              smallImageDiv
+                .querySelector("img")
+                .addEventListener("click", function () {
+                  const mainImage = productElement.querySelector("#main-image");
+                  mainImage.src = smallImageUrl;
+                  mainImage.alt = name;
+                });
             });
           }
 
